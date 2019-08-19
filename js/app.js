@@ -1,6 +1,6 @@
 let ball;
 let paddle1;
-let paddled2;
+let paddle2;
 let firstUserScore = 0;
 let secondUserScore = 0;
 
@@ -21,11 +21,8 @@ function draw() {
     paddle1.show();
     paddle2.show();
 
-    lerp(20, 20);
-
     text(firstUserScore, width / 2 - width / 4, 100);
     text(secondUserScore, width / 2 + width / 4, 100);
-    
 
     if (keyIsDown(SHIFT)) {
         paddle1.move(-5);
