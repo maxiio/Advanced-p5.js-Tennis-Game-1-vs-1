@@ -48,11 +48,13 @@ class Ball {
         
         this.x = width / 2;
         this.y = height / 2;
-        if (situation == 'firstUser') {
-            firstUserScore++;
-        }
-        if (situation == 'secondUser') {
-            secondUserScore++;
+        switch (situation) {
+            case 'firstUser':
+                firstUserScore++;
+                break;
+            case 'secondUser':
+                secondUserScore++;
+                break;
         }
     }
 }
