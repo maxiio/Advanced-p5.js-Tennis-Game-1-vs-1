@@ -39,6 +39,13 @@ class Ball {
         }
     }
     reset(situation) {
+        ball.xSpeed = 0;
+        ball.ySpeed = 0;
+        setTimeout(() => {
+            ball.xSpeed = 10;
+            ball.ySpeed = 4;
+        }, 700);
+        
         this.x = width / 2;
         this.y = height / 2;
         if (situation == 'firstUser') {
