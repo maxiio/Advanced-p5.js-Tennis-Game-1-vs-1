@@ -7,14 +7,29 @@ class Ball {
         this.xSpeed = -10;
         this.ySpeed = 4;
     }
+
+    increaseSpeed(increaseAmount, updateTime) {
+        setInterval(() => {
+            if (this.xSpeed < 0) {
+                this.xSpeed = this.xSpeed - increaseAmount;
+                this.currentSpeed = this.xSpeed;
+            } else if (this.xSpeed > 0) {
+                this.xSpeed = this.xSpeed + increaseAmount;
+                this.currentSpeed = this.xSpeed;
+            }
+        }, updateTime);
+    }
+
     update() {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
     }
+
     show() {
         fill(255);
         ellipse(this.x, this.y, this.width, this.height);
     }
+
     edges() {
         if (this.y < 0 || this.y > height) {
             this.ySpeed *= -1;
@@ -42,12 +57,17 @@ class Ball {
         ball.xSpeed = 0;
         ball.ySpeed = 0;
         setTimeout(() => {
-            ball.xSpeed = 10;
+            let randomNumber = Math.floor(Math.random() * 2);
+            let resetSpeed = 10;
+            if (randomNumber == 1) resetSpeed = -10;
+            else resetSpeed = 10;
+            ball.xSpeed = resetSpeed;
             ball.ySpeed = 4;
         }, 700);
         
         this.x = width / 2;
         this.y = height / 2;
+
         switch (situation) {
             case 'firstUser':
                 firstUserScore++;

@@ -9,6 +9,7 @@ function setup() {
     textSize(25);
     textFont('arial');
     ball = new Ball();
+    ball.increaseSpeed(2, 5000);
     paddle1 = new Paddle(10);
     paddle2 = new Paddle(width - new Paddle().width - 10);
 }

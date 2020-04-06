@@ -5,6 +5,7 @@ class Paddle {
         this.x = x;
         this.y = height / 2 - this.height / 2;
     }
+
     move(dir) {
         this.y += dir;
         this.y = constrain(this.y, 0, height - this.height);
