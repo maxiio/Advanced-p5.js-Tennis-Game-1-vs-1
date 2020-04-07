@@ -12,10 +12,10 @@ class Ball {
         setInterval(() => {
             if (this.xSpeed < 0) {
                 this.xSpeed = this.xSpeed - increaseAmount;
-                this.currentSpeed = this.xSpeed;
+                
             } else if (this.xSpeed > 0) {
                 this.xSpeed = this.xSpeed + increaseAmount;
-                this.currentSpeed = this.xSpeed;
+                
             }
         }, updateTime);
     }
